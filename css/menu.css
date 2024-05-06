@@ -1,0 +1,134 @@
+:root {
+    --title-sp-color:#BA0406;
+    --menu-footer-bg-color:#000000;
+    --nav-conteudo-bg-color:#5a5353;
+    --text-a-color:#ffffff;
+    --drop-menu-bg-color:#e2e2e2;
+    --drop-menu-hover-bg-color:#cacaca
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.box h1 {
+    font-size: 300%;
+}
+
+.box img{
+    width: 100px;
+}
+
+.box span {
+    color: var(--title-sp-color);
+}
+
+#btt_menu{
+    display: none;
+}
+
+label[for="btt_menu"]{
+    display: none;
+    padding: 10px;
+    color: var(--text-a-color);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.container {
+    background-color: var(--menu-footer-bg-color);
+    margin: auto;
+    padding: 1px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.nav {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: oblique;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: var(--menu-footer-bg-color);
+}
+
+.nav li{
+    float: left;
+}
+
+li a, .drop_btt{
+    display: inline-block;
+    color: var(--text-a-color);
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li:hover, .dropdown:hover, .drop_btt:hover{
+    background-color: var(--nav-conteudo-bg-color);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--drop-menu-bg-color);
+    min-width: 160px;
+}
+
+.dropdown-menu a {
+    color: #000000;
+    padding: 14px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-menu a:hover{
+    background-color: var(--drop-menu-hover-bg-color);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+@media(max-width: 800px){
+    label[for="btt_menu"]{
+        display: block;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .nav li{
+        float: none;
+        text-align: center;
+    }
+
+    .nav .dropdown-menu{
+        position: relative;
+    }
+
+    .nav .dropdown-menu a{
+        text-align: center;
+    }
+
+    #btt_menu:checked ~ .nav{
+        display: block;
+    }
+}
+
+@media(max-width: 425px){
+    label[for="btt_menu"]{
+        font-size: 40px;
+    }
+}
